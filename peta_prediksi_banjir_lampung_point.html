@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_e715dde9bdcd53754101e373f6a170e2 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed;
+     bottom: 50px; left: 50px; width: 200px; height: 110px;
+     background-color: white; border:2px solid grey; z-index:9999; font-size:14px;">
+     &nbsp;<b>Legenda Kerawanan Banjir</b><br>
+     &nbsp;<i style="background:green; width:10px; height:10px; display:inline-block;"></i>&nbsp; Aman<br>
+     &nbsp;<i style="background:orange; width:10px; height:10px; display:inline-block;"></i>&nbsp; Sedang<br>
+     &nbsp;<i style="background:red; width:10px; height:10px; display:inline-block;"></i>&nbsp; Tinggi
+</div>
+    
+            <div class="folium-map" id="map_e715dde9bdcd53754101e373f6a170e2" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_e715dde9bdcd53754101e373f6a170e2 = L.map(
+                "map_e715dde9bdcd53754101e373f6a170e2",
+                {
+                    center: [-5.2, 105.3],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 8,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_79b8d0be5450389b73a66235302704d0 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_79b8d0be5450389b73a66235302704d0.addTo(map_e715dde9bdcd53754101e373f6a170e2);
+        
+    
+            var circle_marker_a5fb9fc11ce36f2d5dccc4cbbb015494 = L.circleMarker(
+                [-5.3935182, 105.258214],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_e715dde9bdcd53754101e373f6a170e2);
+        
+    
+        var popup_a9a7e8407c78667e8494ee57b3f4bdd3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_63704649b491199d4c4e1ae184804ce9 = $(`<div id="html_63704649b491199d4c4e1ae184804ce9" style="width: 100.0%; height: 100.0%;">     <b>Kecamatan:</b> Kedaton<br>     <b>Kabupaten/Kota:</b> Bandar Lampung<br>     <b>Curah Hujan:</b> 2100 mm<br>     <b>Kerawanan:</b> 1     </div>`)[0];
+                popup_a9a7e8407c78667e8494ee57b3f4bdd3.setContent(html_63704649b491199d4c4e1ae184804ce9);
+            
+        
+
+        circle_marker_a5fb9fc11ce36f2d5dccc4cbbb015494.bindPopup(popup_a9a7e8407c78667e8494ee57b3f4bdd3)
+        ;
+
+        
+    
+    
+            var circle_marker_20f13e4811c8767399d6e91a8beee16d = L.circleMarker(
+                [-5.3627526, 105.229728],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_e715dde9bdcd53754101e373f6a170e2);
+        
+    
+        var popup_209b59d562374eb94d409bfdd53ed84b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6111e306bc018bc94962036b4c0a4a18 = $(`<div id="html_6111e306bc018bc94962036b4c0a4a18" style="width: 100.0%; height: 100.0%;">     <b>Kecamatan:</b> Rajabasa<br>     <b>Kabupaten/Kota:</b> Bandar Lampung<br>     <b>Curah Hujan:</b> 2300 mm<br>     <b>Kerawanan:</b> 1     </div>`)[0];
+                popup_209b59d562374eb94d409bfdd53ed84b.setContent(html_6111e306bc018bc94962036b4c0a4a18);
+            
+        
+
+        circle_marker_20f13e4811c8767399d6e91a8beee16d.bindPopup(popup_209b59d562374eb94d409bfdd53ed84b)
+        ;
+
+        
+    
+    
+            var circle_marker_df3835c10acfb99b2163f77bb60bab3a = L.circleMarker(
+                [-5.3188238, 105.192809],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_e715dde9bdcd53754101e373f6a170e2);
+        
+    
+        var popup_415da3e1f0f8368f14672ac92754d41d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1db0c668de06b569cc69771a1a8c9357 = $(`<div id="html_1db0c668de06b569cc69771a1a8c9357" style="width: 100.0%; height: 100.0%;">     <b>Kecamatan:</b> Natar<br>     <b>Kabupaten/Kota:</b> Lampung Selatan<br>     <b>Curah Hujan:</b> 2500 mm<br>     <b>Kerawanan:</b> 2     </div>`)[0];
+                popup_415da3e1f0f8368f14672ac92754d41d.setContent(html_1db0c668de06b569cc69771a1a8c9357);
+            
+        
+
+        circle_marker_df3835c10acfb99b2163f77bb60bab3a.bindPopup(popup_415da3e1f0f8368f14672ac92754d41d)
+        ;
+
+        
+    
+    
+            var circle_marker_d02ecd0821562ca404aee1a3cfdcc4b1 = L.circleMarker(
+                [-5.1093414, 104.9786047],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_e715dde9bdcd53754101e373f6a170e2);
+        
+    
+        var popup_d97911570c07229a2d4453fd4f95a0f1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_806407b8fdfa424b40635ed8f96014be = $(`<div id="html_806407b8fdfa424b40635ed8f96014be" style="width: 100.0%; height: 100.0%;">     <b>Kecamatan:</b> Kalirejo<br>     <b>Kabupaten/Kota:</b> Lampung Tengah<br>     <b>Curah Hujan:</b> 2400 mm<br>     <b>Kerawanan:</b> 2     </div>`)[0];
+                popup_d97911570c07229a2d4453fd4f95a0f1.setContent(html_806407b8fdfa424b40635ed8f96014be);
+            
+        
+
+        circle_marker_d02ecd0821562ca404aee1a3cfdcc4b1.bindPopup(popup_d97911570c07229a2d4453fd4f95a0f1)
+        ;
+
+        
+    
+    
+            var circle_marker_3917b83eecc04ce64237015de0d68926 = L.circleMarker(
+                [-5.1451951, 105.3284993],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_e715dde9bdcd53754101e373f6a170e2);
+        
+    
+        var popup_ac61286a18b9bbaeecc82af811f9a210 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_da42687f2445afd9d2ff9f5a4a897f2b = $(`<div id="html_da42687f2445afd9d2ff9f5a4a897f2b" style="width: 100.0%; height: 100.0%;">     <b>Kecamatan:</b> Metro Timur<br>     <b>Kabupaten/Kota:</b> Metro<br>     <b>Curah Hujan:</b> 2000 mm<br>     <b>Kerawanan:</b> 1     </div>`)[0];
+                popup_ac61286a18b9bbaeecc82af811f9a210.setContent(html_da42687f2445afd9d2ff9f5a4a897f2b);
+            
+        
+
+        circle_marker_3917b83eecc04ce64237015de0d68926.bindPopup(popup_ac61286a18b9bbaeecc82af811f9a210)
+        ;
+
+        
+    
+    
+            var circle_marker_d6a45daca6e3cb4763f4fffc2e36e617 = L.circleMarker(
+                [-5.3808089, 105.0244308],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_e715dde9bdcd53754101e373f6a170e2);
+        
+    
+        var popup_4b355de3b7f56cd250961453b5cae6d1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_40c369494cefa19132eeb1f681e5ecfd = $(`<div id="html_40c369494cefa19132eeb1f681e5ecfd" style="width: 100.0%; height: 100.0%;">     <b>Kecamatan:</b> Gadingrejo<br>     <b>Kabupaten/Kota:</b> Pringsewu<br>     <b>Curah Hujan:</b> 2150 mm<br>     <b>Kerawanan:</b> 1     </div>`)[0];
+                popup_4b355de3b7f56cd250961453b5cae6d1.setContent(html_40c369494cefa19132eeb1f681e5ecfd);
+            
+        
+
+        circle_marker_d6a45daca6e3cb4763f4fffc2e36e617.bindPopup(popup_4b355de3b7f56cd250961453b5cae6d1)
+        ;
+
+        
+    
+    
+            var circle_marker_17abdac0c53a4dd4e18362fe4504a4bd = L.circleMarker(
+                [-5.2968416, 104.9727936],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_e715dde9bdcd53754101e373f6a170e2);
+        
+    
+        var popup_a826dd486d784cccfe67c03a8116a771 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c8dfaa1b8bd174f80f1471ac7ceca71a = $(`<div id="html_c8dfaa1b8bd174f80f1471ac7ceca71a" style="width: 100.0%; height: 100.0%;">     <b>Kecamatan:</b> Sukoharjo<br>     <b>Kabupaten/Kota:</b> Pringsewu<br>     <b>Curah Hujan:</b> 2250 mm<br>     <b>Kerawanan:</b> 1     </div>`)[0];
+                popup_a826dd486d784cccfe67c03a8116a771.setContent(html_c8dfaa1b8bd174f80f1471ac7ceca71a);
+            
+        
+
+        circle_marker_17abdac0c53a4dd4e18362fe4504a4bd.bindPopup(popup_a826dd486d784cccfe67c03a8116a771)
+        ;
+
+        
+    
+    
+            var circle_marker_c270b9286f2237be0dd2236033589600 = L.circleMarker(
+                [-5.3523217, 104.7938268],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_e715dde9bdcd53754101e373f6a170e2);
+        
+    
+        var popup_6a9ec3de9b798ece75a07795db447948 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0376285d6351c1cde104ea71615ebe3f = $(`<div id="html_0376285d6351c1cde104ea71615ebe3f" style="width: 100.0%; height: 100.0%;">     <b>Kecamatan:</b> Talang Padang<br>     <b>Kabupaten/Kota:</b> Tanggamus<br>     <b>Curah Hujan:</b> 2700 mm<br>     <b>Kerawanan:</b> 2     </div>`)[0];
+                popup_6a9ec3de9b798ece75a07795db447948.setContent(html_0376285d6351c1cde104ea71615ebe3f);
+            
+        
+
+        circle_marker_c270b9286f2237be0dd2236033589600.bindPopup(popup_6a9ec3de9b798ece75a07795db447948)
+        ;
+
+        
+    
+</script>
+</html>
