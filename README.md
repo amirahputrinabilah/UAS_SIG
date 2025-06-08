@@ -62,7 +62,7 @@ Berdasarkan hasil analisis *feature importance*, beberapa variabel yang paling b
 Proyek ini menghasilkan dua output utama:
 
 1. **Model prediksi banjir** yang dilatih menggunakan algoritma Random Forest.
-2. **Peta interaktif** dalam format HTML (`peta_prediksi_banjir_lampung.html`) yang menunjukkan distribusi tingkat kerawanan banjir di Kota Lampung.
+2. **Peta interaktif** dalam format HTML (`peta_prediksi_banjir_lampung_point.html`) yang menunjukkan distribusi tingkat kerawanan banjir di Kota Lampung.
 
 ---
 
@@ -81,7 +81,7 @@ Proyek ini dibangun menggunakan **Google Colab Notebook**. Untuk menjalankan ula
    - Preprocessing
    - Training dan evaluasi model
    - Pembuatan visualisasi peta
-4. Setelah proses selesai, file **`peta_prediksi_banjir_lampung.html`** akan otomatis terunduh ke perangkat Anda.
+4. Setelah proses selesai, file **`peta_prediksi_banjir_lampung_point.html`** akan otomatis terunduh ke perangkat Anda.
 
 ---
 
